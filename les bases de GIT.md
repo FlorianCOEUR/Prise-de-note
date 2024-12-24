@@ -1,13 +1,16 @@
 #git #linux 
 ## 1. A quoi sert GIT?
 
-C'est un système de gestion de versions.
-Il existe deux types de commandes distinctes:
-	commandes de porcelaines
-		commandes de tous les jours
-	commandes de plomberies
-		 cmd rare pour restaurer git
-	
+Git est essentiel pour la gestion de projet dans le développement logiciel, car il permet de :
+
+- Suivre les modifications de code.
+- Faciliter la collaboration entre plusieurs développeurs.
+- Travailler sur différentes versions du projet.
+- Garantir la sécurité du code avec un historique complet.
+
+Il est devenu l'outil de facto pour le contrôle de version dans le développement logiciel moderne, particulièrement avec des plateformes comme GitHub, GitLab et Bitbucket qui facilitent la collaboration en ligne.
+
+
 ---
 
 
@@ -36,7 +39,7 @@ git config --list
     ```
     git init
     ```
-3. **Créer un fichier** `**README.md**` **:**
+3. **Créer un fichier** `README.md` **:**
 	```
     echo "# Mon Projet" >> README.md
     ```
@@ -165,14 +168,18 @@ Une branche est une version distincte de votre code. Par défaut, Git crée une 
 	git checkout nom-de-la-branche
 	```
 4. **Créer et basculer sur une nouvelle branche**
+	- Pour une branche locale
 	```
 	git checkout -b nom-de-la-branche
 	```
+	- Pour une branche distante:
+```
+	git checkout -b nom-de-la-branche origin/branche-distante
+```
 5. **Supprimer une branche**
 	```
 	git branch -D nom-de-la-branche
 	```
-*Ne jamais modifier un même fichier dans des branches différentes!*
 
 6. **Synchro branche local et distance**
 	```

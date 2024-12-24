@@ -94,7 +94,7 @@ Pour le modificateur, on sépare le bloc ou l’élément par deux tirets `.blo
 
 
 # L'apparence du texte
-
+#font
 ### 1. Changer la taille en CSS avec font-size
 
 1. **La taille absolue**
@@ -188,7 +188,7 @@ h1 {
 - En **notation RGB** (pour Red Green Blue en anglais). Exemple :  `color: rgb(250,25,118);`. Notez qu'on peut ajouter la notion d'opacité (ou de transparence) avec la notation RGBA, où la dernière valeur correspond à l'opacité :  `color: rgba(250,25,118, 0.5);`
 
 ### 7. Changer la couleur d'arrière plan
-
+#background
 Pour indiquer la couleur de fond de la page web, il vaut mieux l'appliquer à la balise  `<body>`  . Eh oui,  `<body>`  correspond à l'ensemble de la page web. C'est donc en modifiant sa couleur de fond que l'on changera la couleur d'arrière-plan de la page :
 ```
 body {
@@ -253,6 +253,7 @@ La propriété CSS `**opacity**`  permet d'indiquer le niveau d'opacité (c'es
 Il faut donc choisir une valeur comprise entre 0 et 1. Ainsi, avec une valeur de 0.6 , votre élément sera opaque à 60 %… et on verra donc à travers !
 
 # Créer des bordures et des ombres en CSS
+#bordure #ombre
 ### 1. Créer des bordures
 
 Le CSS offre un large choix de bordures : `border-width`,  `border-color`,  `border-style`…
@@ -290,3 +291,76 @@ Puis dans le CSS:
 }
 ```
 Ce qui donne un éléments avec 4 styles de bordures différents.
+
+## 2. Arrondir les angles avec `border-radius`
+
+La propriété CSS **`border-radius`** permet d'arrondir les angles de n'importe quel élément. Il suffit d'indiquer la taille de l'arrondi en pixels :
+```
+.element {
+	font-size: 25px;
+	background-color: skyblue;
+	border-radius: 10px;
+	padding: 100px;
+}
+```
+
+On peut également 4 valeurs correspondants aux angles dans `border-radius`, dans cet ordre:
+1. 1. En haut à gauche.
+2. En haut à droite.
+3. En bas à droite.
+4. En bas à gauche.
+```
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px 30px 0px 90px;
+    padding: 100px;
+}
+```
+On peut créer aussi des bordure elliptiques avec `border-radius`, mais le rendu est assez compliqué, il vaut mieux aller voir sur : [Fancy Border Radius](https://9elements.github.io/fancy-border-radius/) 
+```
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 30% 70% 70% 30% / 30% 58% 42% 70%;
+    padding: 100px;
+}
+```
+
+## 3. Ajouter une ombre portée en CSS avec `box-shadow`
+
+Les ombres donnent des effets de profondeur intéressants sur une page web. C'est particulièrement utile sur les boutons d'un site par exemple. Du fait de l'impression de relief, un bouton avec une ombre portée indique visuellement aux visiteurs du site qu'il est "cliquable".
+
+La propriété CSS **`box-shadow`**  s'applique à tout le bloc, et prend quatre valeurs dans l'ordre suivant :
+
+1. Le décalage horizontal de l'ombre.
+2. Le décalage vertical de l'ombre.
+3. L'adoucissement du dégradé.
+4. La couleur de l'ombre.
+
+```
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0);
+    padding: 100px;
+    }
+```
+
+## 4. Ajouter une ombre à un text en CSS avec `text-shadow`
+
+`text-shadow` permet d'ajouter une ombre sur les lettres de votre texte. Effet vintage garanti !
+Les valeurs fonctionnent exactement de la même façon que  `box-shadow` :
+
+1. décalage horizontal,
+2. décalage vertical,
+3. adoucissement,
+4. et couleur.
+```
+h1 {
+    font-size: 50px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    padding: 100px;
+}
+```
