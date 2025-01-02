@@ -249,3 +249,9 @@ Si des conflits arrivent un message d'erreur se fait, il faut ainsi résoudre le
 
 	- `git push <remote> <place>`
 		les arguments sont les mêmes que pour `fetch` ou `pull`
+
+
+## 8. Cours 02/01/2025
+
+#### Le pull request:
+Un **pull request** (PR) sur GitHub est une demande de fusion (ou "merge") de modifications apportées dans une branche d'un projet vers une autre branche, généralement la branche principale (souvent appelée `main` ou `master`). C'est un mécanisme utilisé pour proposer, discuter et intégrer les changements de code de manière collaborative.
