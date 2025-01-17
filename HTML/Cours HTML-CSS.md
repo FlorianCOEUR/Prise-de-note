@@ -24,9 +24,39 @@ Dans le `<body>` il ne peut y avoir qu'une seule balise `<h1>`, elle sera utile 
 
 les différentes tailles d'écrans:
 
-| <500 px | 991 | 1199 | 1400 | >1400 |
-| ------- | --- | ---- | ---- | ----- |
+| <500 px | 768 | 992 | 1200 | 1400 | >1400 |
+| ------- | --- | --- | ---- | ---- | ----- |
 
 # NavBar
 #navbar
 La barre de navigation est une liste de liens.
+
+# Bonne pratique de dev:
+Afin de visualiser quel taille d'écran nous avons, il est conseillé de se faire un système mémotechnique afin de visualiser facilement, par exemple mettre une bordure au top du body qui change de couleur suivant la taille de l'écran (largeur)
+
+# Faire une nav bar
+#navbar 
+
+Nous avons :
+<nav>
+	<ul>
+
+		<li><a href=""></a></li>
+
+		<li><a href=""></a></li>
+
+		<li><a href=""></a></li>
+
+		<li><a href=""></a></li>
+
+	</ul>
+ </nav>
+ Il faut supprimer la puce, la marge a gauche et dire qu'il faut être en ligne
+ dans le ul:
+ - `list-style-type:none` pour supprimer la puce
+ - `padding-left: 0` enlever la marge a gauche
+sur les li:
+- `display:inline-block` afin de les mettre en ligne
+```
+
+```
