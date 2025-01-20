@@ -60,3 +60,24 @@ sur les li:
 ```
 
 ```
+
+
+
+# Comprendre `Grid`
+#grid
+Il y a une video à voir :
+https://www.youtube.com/watch?v=tcrAaPIZbLo&t=137s&ab_channel=ParfaitementWeb
+- `display: grid` Pour définir un grid
+- `grid-gap: 10px`: Mettre un espacement de 10px entre chaque élément
+- `grid-template-columns: repeat(3, minmax(200px, 1fr)` il y aura donc 3 colonne de au moins `200px`
+- `grid-template-row: repeat(2, 300px)`:  il y aura donc 2 rangées de 300px de large.
+- `grid-auto-flow: column`: changement du rangement de grid en colonne
+- `grid-auto-rows: minmax(50px, auto)`: Pour gérer de manière automatique la hauteur des colonnes
+SI on souhaite changer la taille de certains éléments:
+```
+.card:nth-child(x){
+	grid-column: 1/span2;
+	grid-row: span 2;
+}
+```
+Ici, l'enfant xieme enfant de la classe card, débutera a la colonne 1 et s'étirera sur 2 colonnes et fera 2 lignes de largeurs
