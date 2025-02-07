@@ -57,11 +57,6 @@ Nous avons :
  - `padding-left: 0` enlever la marge a gauche
 sur les li:
 - `display:inline-block` afin de les mettre en ligne
-```
-
-```
-
-
 
 # Comprendre `Grid`
 #grid
@@ -74,10 +69,47 @@ https://www.youtube.com/watch?v=tcrAaPIZbLo&t=137s&ab_channel=ParfaitementWeb
 - `grid-auto-flow: column`: changement du rangement de grid en colonne
 - `grid-auto-rows: minmax(50px, auto)`: Pour gérer de manière automatique la hauteur des colonnes
 SI on souhaite changer la taille de certains éléments:
-```
+```css
 .card:nth-child(x){
 	grid-column: 1/span2;
 	grid-row: span 2;
 }
 ```
 Ici, l'enfant xieme enfant de la classe card, débutera a la colonne 1 et s'étirera sur 2 colonnes et fera 2 lignes de largeurs
+
+# Formulaires!
+#form
+Pour faire des formulaires il existe la balise `<form></form>`
+```html
+<form action="traitement.php" method="post" enctype="multipart/form-data">
+
+                <label for="prenom">Votre Prénom:</label>
+                <input type="text" name="firstname" id="prenom" placeholder="Votre Prénom">
+                <label for="modepass">Mot de passe:</label>
+                <input type="password" name="mdp" id="motdepass">
+                <label for="birthday">Date de naissance</label>
+                <input type="date" name="birthdaydate" id="birthday">
+                <!-- exemple de boutton radio -->
+                <input type="radio" name="test1" value="0">oui
+                <input type="radio" name="test1" value="1">non
+                <input type="radio" name="test1" value="2">maybe
+                 <!--En changeant l'attribut name, on peut groupe les bouttons radio  -->
+                <input type="radio" name="test3" value="0">oui
+                <input type="radio" name="test3" value="1">non
+                <input type="radio" name="test3" value="2">maybe
+                <!--La checkbox-->
+                <input type="checkbox" name="test2" value="10">Mon texte
+                <!--Textearea est une balise enpair-->
+                <textarea name="bio">Ma biographie</textarea>
+                <!--FAire une liste de choix-->
+                <label for="monSelect">Choisi ton sexe:</label>
+                <select name="monSelect" required>
+                    <option value="">Choisissez</option>
+                    <option value="1">Homme</option>
+                    <option value="2">Femme</option>
+                    <option value="3">Aucun</option>
+                </select>
+                <input type="submit" Value="OK">
+            </form>
+```
+- pour la `method` on utilise par défaut `post`, il existe aussi `get` mais qui inscrit tous les chants dans l'URL.

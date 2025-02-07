@@ -21,7 +21,13 @@ Le "design Thinking" se situe au croisement de la pensée analytique (preuve chi
 # Les étapes de créations
 
 
-1. plan de site
-2. Zoning
-3. Réalisation d'une maquette WireFrame
-4. 
+1. brief
+2. mindmap (mindSpace)
+3. Zoning-plan de site (relum.ai)
+4. Réalisation d'une maquette WireFrame
+
+
+# Réalisation de maquette
+
+Il faut déjà prendre en compte la taille des écrans, par défaut nous prendrons:
+- 1180 x 770

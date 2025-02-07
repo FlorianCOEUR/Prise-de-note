@@ -36,17 +36,17 @@ SET prix_total=prix_unitaire*quantite;
 
 5. Obtenir le montant total pour chaque commande et y voir facilement la date associée à cette commande ainsi que le prénom et nom du client associé
 
-```
+```MySQL
 SELECT c.id, client.nom, client.prenom, SUM(prix_total)
 FROM commande c
-LEFT JOIN commande_ligne cl ON c.id=cl.commande_id
-LEFT JOIN client ON c.client_id=client.id
+JOIN commande_ligne cl ON c.id=cl.commande_id
+JOIN client ON c.client_id=client.id
 GROUP BY c.id;
 ```
 
 6. Enregistrer le montant total de chaque commande dans le champ intitulé “cache_prix_total”
 
-```
+```MySQL
 UPDATE commande c
 JOIN (
     SELECT commande_id, SUM(prix_total) AS total
@@ -59,7 +59,7 @@ SET c.cache_prix_total = lc.total;
 
 7. Obtenir le montant global de toutes les commandes, pour chaque mois
 
-```
+```MySQL
 SELECT SUM(cache_prix_total), MONTH(date_achat) AS mois
 FROM commande
 GROUP BY mois;
@@ -67,7 +67,7 @@ GROUP BY mois;
 
 8. Obtenir la liste des 10 clients qui ont effectué le plus grand montant de commandes, et obtenir ce montant total pour chaque client.
 
-```
+```MysQL
 SELECT client.prenom, client.prenom, SUM(commande.cache_prix_total) AS tc
 FROM client
 JOIN commande on commande.client_id=client.id
@@ -78,7 +78,7 @@ LIMIT 10;
 
 9. Obtenir le montant total des commandes pour chaque date
 
-```
+```mysql
 SELECT commande.date_achat, SUM(commande.cache_prix_total)
 FROM commande
 GROUP BY commande.date_achat;
@@ -86,7 +86,7 @@ GROUP BY commande.date_achat;
 
 10.  Ajouter une colonne intitulée “category” à la table contenant les commandes. Cette colonne contiendra une valeur numérique
 
-```
+```mysql
 ALTER TABLE commande
 ADD category INT;
 ```
@@ -97,7 +97,7 @@ ADD category INT;
     - “3” pour les commandes entre 500€ et 1.000€
     - “4” pour les commandes supérieures à 1.000€
 
-```
+```mysql
 UPDATE commande c
 SET c.category = CASE
 	WHEN c.cache_prix_total<200 THEN 1
