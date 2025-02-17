@@ -51,7 +51,46 @@ switch ($jour){
 	default:
 		echo "J'avais la flemme";
 }
+```
+
+Si on souhaite arrêter le programme, nous pouvons utiliser `exit;`
+
+### 5. Les boucles
+
+```php
+for ($i=0; $i>5; $i++){
+	echo $i;
+}
+
+foreach ($fruits as $fruit){
+	echo $fruit; //$fruits est un tableau de fruits
+}
+
+$compteur = 1;
+while($compteur<=5){
+echo "Compteur : $compteur<br>";
+$compteur++;
+}
+
+$compteur=1;
+do{
+	echo "Compteur : $compteur<br>";
+	$compteur++;
+}while($compteur<=5);
+```
 
 
+### 6. Les fonctions
 
+##### 6.1 Définir une fonction:
+```php
+function saluer($nom){
+	return "Bonjour, $nom!";
+}
+
+function increaseStock(array $meubles):void{
+	foreach($meubles as $meuble){
+	$meuble["stock"]++;
+	}
+}
 ```
